@@ -13,14 +13,17 @@ function dinojump() {
     }, 500)
 }
 
-var checkDead = setInterval(function(){
+var checkDead = setInterval(function () {
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
 
-    if(blockLeft < 45 && blockLeft > 0 && characterTop >= 200) {
+    if (blockLeft < 100 && blockLeft > 0 && characterTop >= 200) {
         block.style.animation = "none";
         block.style.display = "none";
-        alert("You Lose");
-        // location.reload();  
+        alert("You Lose \nScore: 00"); 
     }
-},10)
+}, 10)
+
+function startGame(){
+    location.reload();
+}
